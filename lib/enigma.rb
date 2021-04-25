@@ -7,4 +7,10 @@ class Enigma
     @key = key
     @date = date
   end
+
+  def encrypt(message)
+  end
+
+  def decrypt(cipher_text)
+  end
 end
