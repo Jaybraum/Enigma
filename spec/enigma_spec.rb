@@ -43,6 +43,14 @@ RSpec.describe Enigma do
                                                                       date: "040895"})
     end
 
+    it '#encrypt with no key' do
+      enigma = Enigma.new
+
+      expect(enigma.encrypt("hello world", , "040895")).to eq({encryption: "keder ohulw",
+                                                                      key: "02715",
+                                                                      date: "040895"})
+    end
+
     it '#create decrypt message' do
       enigma = Enigma.new
 
