@@ -32,6 +32,7 @@ class Enigma
   end
 
   def encrypt_message(message, shift)
+    message = message.downcase
     array = message.split("").map do |character|
       character
     end
@@ -75,9 +76,9 @@ class Enigma
     key_code = key(key)
     offset_code = offset(date)
     shift_code = shift(key_code, offset_code)
-    encrypted_message = decrypt_message(message, shift_code)
+    decrypted_message = decrypt_message(message, shift_code)
 
-    hash = {:encryption => encrypted_message,
+    hash = {:decryption => decrypted_message,
             :key => key,
             :date => date}
   end

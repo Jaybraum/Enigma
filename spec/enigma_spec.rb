@@ -35,10 +35,10 @@ RSpec.describe Enigma do
       expect(enigma.encrypt_message("hello world", [3, 27, 73, 20])).to eq("keder ohulw")
     end
 
-    xit '#encrypt' do
+    it '#encrypt' do
       enigma = Enigma.new
 
-      expect(enigma.encrypt("hello world", "02715", "040895")).to eq({encryption: "keder ohulw",
+      expect(enigma.encrypt("hello world!", "02715", "040895")).to eq({encryption: "keder ohulw",
                                                                       key: "02715",
                                                                       date: "040895"})
     end
@@ -61,7 +61,7 @@ RSpec.describe Enigma do
       expect(enigma.encrypt("hello world","02715")).to be_a(Hash)
     end
 
-    it '#encrypt with no data' do
+    xit '#encrypt with no data' do
       enigma = Enigma.new
 
       expect(enigma.encrypt("hello world")).to be_a(Hash)
