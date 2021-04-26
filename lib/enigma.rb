@@ -70,7 +70,7 @@ class Enigma
     key_code = key(key)
     offset_code = offset(date)
     shift_code = shift(key_code, offset_code)
-    encrypted_message = encrypt_message(message, shift_code)
+    encrypted_message = decrypt_message(message, shift_code)
 
     hash = {:encryption => encrypted_message,
             :key => key,

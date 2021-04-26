@@ -49,7 +49,7 @@ RSpec.describe Enigma do
       expect(enigma.decrypt_message("keder ohulw", [3, 27, 73, 20])).to eq("hello world")
     end
 
-    xit '#decrypt' do
+    it '#decrypt' do
       enigma = Enigma.new
 
       expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq({encryption: "hello world",
