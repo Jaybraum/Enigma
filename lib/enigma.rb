@@ -1,11 +1,9 @@
 require 'date'
 
 class Enigma
-  attr_reader :character_set,
-              :date
+  attr_reader :character_set
   def initialize
     @character_set = ("a".."z").to_a << " "
-    @date = date
   end
 
   def key(key_string)
@@ -33,9 +31,12 @@ class Enigma
     shifts
   end
 
+  def encrypt_message(message, shift)
+  end
+
 
 
   def encrypt(message, key, date)
-    #take in message
+    hash = [:encryption] = message
   end
 end

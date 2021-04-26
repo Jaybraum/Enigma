@@ -23,14 +23,20 @@ RSpec.describe Enigma do
       expect(enigma.offset("040895")).to eq([1, 0, 2, 5])
     end
 
-    it '#shift' do
+    it '#create shift' do
       enigma = Enigma.new
 
       expect(enigma.shift([2, 27, 71, 15], [1, 0, 2, 5])).to eq([3, 27, 73, 20])
     end
 
+    it '#create encrypt message' do
+      enigma = Enigma.new
 
-    xit '#encrypt' do
+      expect(enigma.shift("hello world", [3, 27, 73, 20])).to eq("keder ohulw")
+    end
+
+
+    it '#encrypt' do
       enigma = Enigma.new
 
       expect(enigma.encrypt("hello world", "02715", "040895")).to eq({encryption: "keder ohulw",
