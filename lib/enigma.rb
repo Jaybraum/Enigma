@@ -1,9 +1,11 @@
+require 'date'
+
 class Enigma
-  attr_reader :message,
+  attr_reader :character_set,
               :key,
               :date
-  def initialize(message, key, date)
-    @message = message
+  def initialize
+    @character_set = ("a".."z").to_a << " "
     @key = key
     @date = date
   end

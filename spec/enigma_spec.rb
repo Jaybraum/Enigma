@@ -4,23 +4,43 @@ require 'date'
 RSpec.describe Enigma do
   describe 'instantiation' do
     it '::new' do
-      enigma = Enigma.new('Jermaine', 'key', 'date')
+      enigma = Enigma.new
 
       expect(enigma).to be_an_instance_of(Enigma)
     end
   end
 
   describe 'methods' do
-    it '#encrypt' do
-      enigma = Enigma.new('Jermaine', 'key', 'date')
+    xit '#encrypt' do
+      enigma = Enigma.new
 
-      expect(enigma.encrypt('Jermaine')).to be_a(Hash)
+      expect(enigma.encrypt('hello world', "02715")).to eq({encryption: "keder ohulw",
+                                                                      key: "02715",
+                                                                      date: "040895"})
     end
 
-    it '#decrypt' do
-      enigma = Enigma.new('Jermaine', 'key', 'date')
+    xit '#encrypt with date' do
+      enigma = Enigma.new
 
-      expect(enigma.decrypt(???)).to be_a(Hash)
+      expect(enigma.encrypt('hello world', "02715", "040895")).to eq({encryption: "keder ohulw",
+                                                                      key: "02715",
+                                                                      date: "040895"})
+    end
+
+    xit '#decrypt' do
+      enigma = Enigma.new
+
+      expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq({decryption: "hello world",
+                                                                      key: "02715",
+                                                                      date: "040895"})
+    end
+
+    xit '#decrypt with date' do
+      enigma = Enigma.new
+
+      expect(enigma.decrypt("keder ohulw", "02715")).to eq({decryption: "hello world",
+                                                                      key: "02715",
+                                                                      date: "040895"})
     end
   end
 end
