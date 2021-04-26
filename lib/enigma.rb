@@ -53,4 +53,27 @@ class Enigma
             :key => key,
             :date => date}
   end
+
+  def decrypt_message(message, shift)
+    array = message.split("").map do |character|
+      character
+    end
+
+    array.map.with_index do |letter, index|
+      letter_index = @character_set.index(letter)
+      rotated = @character_set.rotate(-(shift[index % 4]))
+      rotated[letter_index]
+    end.join
+  end
+
+  def decrypt(message, key, date)
+    key_code = key(key)
+    offset_code = offset(date)
+    shift_code = shift(key_code, offset_code)
+    encrypted_message = encrypt_message(message, shift_code)
+
+    hash = {:encryption => encrypted_message,
+            :key => key,
+            :date => date}
+  end
 end
