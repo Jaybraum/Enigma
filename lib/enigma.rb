@@ -43,7 +43,12 @@ class Enigma
     end.join
   end
 
-  def encrypt(message, key, date)
+  def date_to_string
+    date = Time.now.strftime("%d%m%y").to_i
+    last_digits = (date.to_s)[-4..-1]
+  end
+
+  def encrypt(message, key = '%05d' % rand(100000), date = date_to_string)
     key_code = key(key)
     offset_code = offset(date)
     shift_code = shift(key_code, offset_code)
