@@ -32,11 +32,18 @@ class Enigma
   end
 
   def encrypt_message(message, shift)
+    array = message.split("").map do |character|
+      character
+    end
+
+    array.map.with_index do |letter, index|
+      letter_index = @character_set.index(letter)
+      rotated = @character_set.rotate(shift[index % 4])
+      rotated[letter_index]
+    end.join
   end
 
-
-
   def encrypt(message, key, date)
-    hash = [:encryption] = message
+
   end
 end
