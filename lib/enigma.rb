@@ -44,6 +44,7 @@ class Enigma
   end
 
   def encrypt(message, key, date)
+    require "pry"; binding.pry
 
   end
 end

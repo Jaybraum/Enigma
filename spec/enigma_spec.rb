@@ -36,7 +36,7 @@ RSpec.describe Enigma do
     end
 
 
-    xit '#encrypt' do
+    it '#encrypt' do
       enigma = Enigma.new
 
       expect(enigma.encrypt("hello world", "02715", "040895")).to eq({encryption: "keder ohulw",
