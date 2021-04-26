@@ -68,9 +68,13 @@ class Enigma
     end
 
     array.map.with_index do |letter, index|
-      letter_index = @character_set.index(letter)
-      rotated = @character_set.rotate(-(shift[index % 4]))
-      rotated[letter_index]
+      if @character_set.index(letter) == nil
+        letter
+      else
+        letter_index = @character_set.index(letter)
+        rotated = @character_set.rotate(-(shift[index % 4]))
+        rotated[letter_index]
+      end
     end.join
   end
 
