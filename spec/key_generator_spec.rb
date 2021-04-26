@@ -12,7 +12,7 @@ RSpec.describe KeyGenerator do
     it '#generate' do
       key_generator = KeyGenerator.new
 
-      expect(key_generator.generate).to be_a(Integer)
+      expect(key_generator.generate).to be_a(String)
     end
   end
 end
