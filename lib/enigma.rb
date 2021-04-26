@@ -10,7 +10,9 @@ class Enigma
     @date = date
   end
 
-  def encrypt(message)
+  
+
+  def key_split
   end
 
   def decrypt(cipher_text)
