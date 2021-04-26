@@ -11,16 +11,22 @@ RSpec.describe Enigma do
   end
 
   describe 'methods' do
-    it '#key' do
+    it '#create key' do
       enigma = Enigma.new
 
-      expect(enigma.key_to_array("02715")).to eq([2, 27, 71, 15])
+      expect(enigma.key("02715")).to eq([2, 27, 71, 15])
     end
 
-    xit '#shift' do
+    it '#create offset' do
       enigma = Enigma.new
 
-      expect(enigma.shift("02715", "040895")).to eq
+      expect(enigma.offset("040895")).to eq([1, 0, 2, 5])
+    end
+
+    it '#shift' do
+      enigma = Enigma.new
+
+      expect(enigma.shift([2, 27, 71, 15], [1, 0, 2, 5])).to eq([3, 27, 73, 20])
     end
 
 
